@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-headline: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --font-body: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-label: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+
+  --color-surface: #131313;
+  --color-surface-low: #1b1c1c;
+  --color-surface-lowest: #0e0e0e;
+  --color-surface-container: #1f2020;
+  --color-surface-container-high: #2a2a2a;
+  --color-surface-container-highest: #353535;
+  --color-surface-bright: #393939;
+  
+  --color-on-surface: #e5e2e1;
+  --color-on-surface-variant: #c4c7c8;
+  --color-outline: #8e9192;
+  --color-outline-variant: #444748;
+  
+  --color-primary: #ffffff;
+  --color-on-primary: #131313;
+  --color-secondary: #c6c6c7;
+}
+
+@layer base {
+  body {
+    @apply bg-surface text-on-surface font-body selection:bg-primary selection:text-on-primary overflow-x-hidden;
+  }
+}
+
+@layer utilities {
+  .technical-bracket-tl { border-top: 1px solid var(--color-outline); border-left: 1px solid var(--color-outline); width: 10px; height: 10px; position: absolute; top: 0; left: 0; }
+  .technical-bracket-tr { border-top: 1px solid var(--color-outline); border-right: 1px solid var(--color-outline); width: 10px; height: 10px; position: absolute; top: 0; right: 0; }
+  .technical-bracket-bl { border-bottom: 1px solid var(--color-outline); border-left: 1px solid var(--color-outline); width: 10px; height: 10px; position: absolute; bottom: 0; left: 0; }
+  .technical-bracket-br { border-bottom: 1px solid var(--color-outline); border-right: 1px solid var(--color-outline); width: 10px; height: 10px; position: absolute; bottom: 0; right: 0; }
+  
+  .glass-blur { backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); }
+  .monochrome-filter { filter: grayscale(100%) contrast(1.2) brightness(0.8); }
+
+  .scanline {
+    width: 100%;
+    height: 100px;
+    z-index: 100;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, rgba(255, 255, 255, 0.02) 50%, rgba(0, 0, 0, 0) 100%);
+    opacity: 0.1;
+    position: fixed;
+    bottom: 100%;
+    pointer-events: none;
+    animation: scanline 10s linear infinite;
+  }
+
+  .grid-bg {
+    background-image: radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.05) 1px, transparent 0);
+    background-size: 40px 40px;
+  }
+
+  @keyframes scanline {
+    0% { bottom: 100%; }
+    100% { bottom: -100px; }
+  }
+}
