@@ -201,7 +201,7 @@ export default function App() {
       </nav>
 
       {/* Hero Section with Carousel */}
-      <section className="relative grid grid-cols-1 lg:grid-cols-[45%_55%] lg:items-start pb-24 md:pb-32 overflow-hidden pt-[120px]" style={{ background: '#111' }}>
+      <section className="relative grid grid-cols-1 lg:grid-cols-[45%_55%] lg:items-start pb-24 md:pb-32 overflow-hidden pt-[140px] min-h-screen" style={{ background: '#111' }}>
         {/* Carousel Background */}
         <div className="absolute inset-0 z-0">
           <div
