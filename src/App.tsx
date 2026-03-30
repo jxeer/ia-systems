@@ -201,7 +201,7 @@ export default function App() {
       </nav>
 
       {/* Hero Section with Carousel */}
-      <section className="relative h-screen overflow-hidden">
+      <section className="relative min-h-screen overflow-hidden grid grid-cols-1 lg:grid-cols-[45%_55%] lg:items-start">
         {/* Carousel Background */}
         <div className="absolute inset-0 z-0">
           <div 
@@ -222,48 +222,20 @@ export default function App() {
           </div>
         </div>
         
-        {/* Content Overlay */}
-        <div className="relative z-10 h-full flex flex-col justify-end pb-24 md:pb-32 px-6 md:px-12 max-w-[1920px] mx-auto w-full">
+        {/* Text Content */}
+        <div className="relative z-10 px-6 md:px-12 pt-24 md:pt-32 lg:col-start-1 lg:col-end-2 lg:self-start">
           <motion.div 
             key={currentSlide}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="max-w-7xl w-full"
+            className="max-w-xl"
           >
-            <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 mb-12">
-              <div className="flex-1">
-                <SectionLabel>Operational Status: Active // {slides[currentSlide].id}</SectionLabel>
-                <h1 className="font-headline text-5xl md:text-8xl font-bold tracking-tighter leading-[0.9] text-white max-w-4xl uppercase">
-                  {slides[currentSlide].title.split(' // ')[0]}<br />
-                  <span className="text-outline/40">{slides[currentSlide].protocol}</span>
-                </h1>
-              </div>
-              
-              <div className="lg:w-[400px] xl:w-[500px] aspect-[4/3] lg:aspect-auto lg:h-[300px] xl:h-[350px] relative overflow-hidden border border-white/10">
-                <img 
-                  src={slides[currentSlide].imagePath}
-                  alt={slides[currentSlide].title}
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-surface/50 to-transparent" />
-              </div>
-              
-              <div className="flex gap-4">
-                <button 
-                  onClick={prevSlide}
-                  className="w-12 h-12 md:w-16 md:h-16 border border-white/20 flex items-center justify-center hover:bg-primary hover:text-on-primary transition-all duration-300 glass-blur"
-                >
-                  <ChevronLeft className="w-6 h-6" />
-                </button>
-                <button 
-                  onClick={nextSlide}
-                  className="w-12 h-12 md:w-16 md:h-16 border border-white/20 flex items-center justify-center hover:bg-primary hover:text-on-primary transition-all duration-300 glass-blur"
-                >
-                  <ChevronRight className="w-6 h-6" />
-                </button>
-              </div>
-            </div>
+            <SectionLabel>Operational Status: Active // {slides[currentSlide].id}</SectionLabel>
+            <h1 className="font-headline text-5xl md:text-7xl xl:text-8xl font-bold tracking-tighter leading-[0.9] text-white uppercase mb-8">
+              {slides[currentSlide].title.split(' // ')[0]}<br />
+              <span className="text-outline/40">{slides[currentSlide].protocol}</span>
+            </h1>
             
             <div className="flex flex-col md:flex-row md:items-center gap-8">
               <p className="font-body text-on-surface-variant max-w-md text-lg leading-relaxed">
@@ -276,6 +248,41 @@ export default function App() {
               </div>
             </div>
           </motion.div>
+        </div>
+
+        {/* Right Column */}
+        <div className="relative lg:col-start-2 lg:col-end-3 h-fit self-start pt-24 md:pt-32">
+          {/* Image Wrapper */}
+          <motion.div
+            key={currentSlide}
+            initial={{ opacity: 0, scale: 1.05 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1.2, ease: "easeOut" }}
+            className="relative w-full h-[55vh] min-h-[350px] overflow-hidden"
+          >
+            <img
+              src={slides[currentSlide].imagePath}
+              alt={slides[currentSlide].title}
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-surface/50 to-transparent" />
+          </motion.div>
+
+          {/* Arrow Buttons - Below Image */}
+          <div className="flex justify-end gap-2 mt-3">
+            <button
+              onClick={prevSlide}
+              className="w-12 h-12 md:w-16 md:h-16 border border-white/20 flex items-center justify-center hover:bg-primary hover:text-on-primary transition-all duration-300 glass-blur"
+            >
+              <ChevronLeft className="w-6 h-6" />
+            </button>
+            <button
+              onClick={nextSlide}
+              className="w-12 h-12 md:w-16 md:h-16 border border-white/20 flex items-center justify-center hover:bg-primary hover:text-on-primary transition-all duration-300 glass-blur"
+            >
+              <ChevronRight className="w-6 h-6" />
+            </button>
+          </div>
         </div>
 
         {/* Scroll Indicator */}
