@@ -201,18 +201,18 @@ export default function App() {
       </nav>
 
       {/* Hero Section with Carousel */}
-      <section className="relative min-h-screen overflow-hidden grid grid-cols-1 lg:grid-cols-[45%_55%] lg:items-start">
+      <section className="relative grid grid-cols-1 lg:grid-cols-[45%_55%] lg:items-start pb-24 md:pb-32 overflow-hidden pt-[120px]" style={{ background: '#111' }}>
         {/* Carousel Background */}
         <div className="absolute inset-0 z-0">
-          <div 
+          <div
             className="flex transition-transform duration-1000 ease-in-out h-full"
             style={{ transform: `translateX(-${currentSlide * 100}%)` }}
           >
             {slides.map((slide) => (
               <div key={slide.id} className="min-w-full h-full relative">
-                <img 
-                  src={slide.image} 
-                  alt={slide.title} 
+                <img
+                  src={slide.image}
+                  alt={slide.title}
                   className="w-full h-full object-cover opacity-100 contrast-110"
                   referrerPolicy="no-referrer"
                 />
@@ -221,10 +221,10 @@ export default function App() {
             ))}
           </div>
         </div>
-        
-        {/* Text Content */}
-        <div className="relative z-10 px-6 md:px-12 pt-24 md:pt-32 lg:col-start-1 lg:col-end-2 lg:self-start">
-          <motion.div 
+
+        {/* Left Column */}
+        <div className="relative lg:col-start-1 lg:col-end-2 z-10 px-6 md:px-12" style={{ paddingLeft: '3rem', paddingRight: '3rem' }}>
+          <motion.div
             key={currentSlide}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -236,7 +236,7 @@ export default function App() {
               {slides[currentSlide].title.split(' // ')[0]}<br />
               <span className="text-outline/40">{slides[currentSlide].protocol}</span>
             </h1>
-            
+
             <div className="flex flex-col md:flex-row md:items-center gap-8">
               <p className="font-body text-on-surface-variant max-w-md text-lg leading-relaxed">
                 Independent Operational Verification & Deployment Systems for Government and Critical Infrastructure.
@@ -250,26 +250,27 @@ export default function App() {
           </motion.div>
         </div>
 
-        {/* Right Column */}
-        <div className="relative lg:col-start-2 lg:col-end-3 h-fit self-start pt-24 md:pt-32">
-          {/* Image Wrapper */}
+        {/* Right Column Wrapper */}
+        <div className="relative lg:col-start-2 lg:col-end-3 h-fit self-start mt-0">
+          {/* Image */}
           <motion.div
             key={currentSlide}
             initial={{ opacity: 0, scale: 1.05 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1.2, ease: "easeOut" }}
-            className="relative w-full h-[55vh] min-h-[350px] overflow-hidden"
+            className="overflow-hidden"
+            style={{ width: '100%', height: '55vh', minHeight: '350px' }}
           >
             <img
               src={slides[currentSlide].imagePath}
               alt={slides[currentSlide].title}
               className="w-full h-full object-cover"
+              style={{ display: 'block' }}
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-surface/50 to-transparent" />
           </motion.div>
 
-          {/* Arrow Buttons - Below Image */}
-          <div className="flex justify-end gap-2 mt-3">
+          {/* Arrow Buttons */}
+          <div className="flex justify-end gap-2 mt-3" style={{ width: '100%' }}>
             <button
               onClick={prevSlide}
               className="w-12 h-12 md:w-16 md:h-16 border border-white/20 flex items-center justify-center hover:bg-primary hover:text-on-primary transition-all duration-300 glass-blur"
@@ -289,17 +290,17 @@ export default function App() {
         <div className="absolute right-6 md:right-12 bottom-12 z-20 flex flex-col items-center gap-4">
           <span className="font-label text-[10px] tracking-widest uppercase rotate-90 mb-8 text-outline">Scroll</span>
           <div className="w-[1px] h-24 bg-surface-container-highest relative overflow-hidden">
-            <motion.div 
+            <motion.div
               animate={{ y: [0, 96, 0] }}
               transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute top-0 w-full h-8 bg-primary" 
+              className="absolute top-0 w-full h-8 bg-primary"
             />
           </div>
         </div>
 
         {/* Carousel Progress Bar */}
         <div className="absolute bottom-0 left-0 w-full h-1 bg-white/10 z-20">
-          <motion.div 
+          <motion.div
             className="h-full bg-primary"
             initial={{ width: "0%" }}
             animate={{ width: `${((currentSlide + 1) / slides.length) * 100}%` }}

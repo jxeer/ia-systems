@@ -11,7 +11,6 @@ A high-fidelity landing page for an intelligence and aerial systems company spec
 | **Styling** | Tailwind CSS 4 with custom design tokens |
 | **Animation** | Motion (Framer Motion alternative) |
 | **Icons** | Lucide React |
-| **AI** | Google Gemini (@google/genai) |
 | **Backend** | Express.js |
 
 ## Getting Started
