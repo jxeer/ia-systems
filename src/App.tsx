@@ -493,6 +493,59 @@ export default function App() {
         </div>
       </section>
 
+      {/* Who We Support Section */}
+      <section className="py-24 md:py-32 px-6 md:px-12 bg-surface">
+        <div className="max-w-[1920px] mx-auto">
+          <SectionLabel>Who We Support</SectionLabel>
+          <h2 className="font-headline text-4xl md:text-5xl tracking-tight text-white uppercase mb-16">
+            Built for Decision Makers
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-outline-variant/10">
+            {[
+              {
+                icon: Shield,
+                title: "Federal Agencies",
+                desc: "USACE, DoD, FEMA, and civilian agency partners requiring verified aerial intelligence and audit-ready documentation."
+              },
+              {
+                icon: Network,
+                title: "Prime Contractors",
+                desc: "Teaming partners seeking UAS capability for large-scale federal infrastructure and disaster response contracts."
+              },
+              {
+                icon: Globe,
+                title: "Infrastructure Operators",
+                desc: "Energy, utility, and transportation operators requiring continuous monitoring and engineering-grade geospatial data."
+              },
+              {
+                icon: Cpu,
+                title: "State & Municipal Governments",
+                desc: "Local and regional authorities managing disaster recovery, infrastructure assessment, and urban planning operations."
+              }
+            ].map((item, i) => (
+              <motion.div
+                key={item.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: i * 0.1 }}
+                viewport={{ once: true }}
+                className="bg-surface p-8 md:p-10 relative group hover:bg-surface-container-low transition-colors duration-500"
+              >
+                <div className="mb-12">
+                  <item.icon className="w-10 h-10 text-primary" strokeWidth={1} />
+                </div>
+                <h3 className="font-headline text-xl mb-4 tracking-tight uppercase">
+                  {item.title}
+                </h3>
+                <p className="text-on-surface-variant font-body text-sm leading-relaxed">
+                  {item.desc}
+                </p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Verified Truth Section */}
       <section className="relative min-h-[600px] md:min-h-[800px] flex items-center overflow-hidden">
         <div className="absolute inset-0 z-0">
