@@ -779,6 +779,15 @@ export default function App() {
               </button>
             </div>
             
+            <a
+              href="/capability-statement.pdf"
+              download
+              className="flex items-center gap-2 font-label text-[10px] tracking-[0.3em] uppercase text-outline hover:text-white transition-colors mt-2"
+            >
+              <ArrowRight className="w-3 h-3" />
+              Download Capability Statement
+            </a>
+            
             <div className="mt-16 md:mt-24 grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 border-t border-outline-variant/10 pt-12">
               {[
                 { label: "Encryption", value: "AES-256 Quantum" },
@@ -802,7 +811,7 @@ export default function App() {
           <div className="flex flex-col gap-4 items-center md:items-start">
             <div className="font-headline text-lg font-bold tracking-[0.2em] text-white uppercase">IA SYSTEMS</div>
             <p className="font-label tracking-widest text-[10px] uppercase text-outline">
-              © 2024 IA SYSTEMS & INTELLIGENCE. ALL RIGHTS RESERVED.
+              © 2025 IA SYSTEMS & INTELLIGENCE. ALL RIGHTS RESERVED.
             </p>
           </div>
           
