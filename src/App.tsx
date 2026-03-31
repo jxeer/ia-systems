@@ -327,7 +327,7 @@ export default function App() {
               { icon: Satellite, title: "Aerial Intelligence", desc: "High-altitude orbital verification and real-time sensory mapping for global strategic positioning." },
               { icon: Network, title: "Infrastructure", desc: "Hardened system architecture designed for persistence in high-threat or degraded environments." },
               { icon: ShieldCheck, title: "Operational Verification", desc: "Decentralized proof of ground-truth using cryptographic telemetry and multi-source cross-referencing." },
-              { icon: CodeXml, title: "Rapid Deployment", desc: "Turnkey intelligence clusters deployable within 24 hours to any global operational theater." }
+              { icon: CodeXml, title: "Rapid Deployment", desc: "Turnkey drone systems deployable within 24 hours to any domestic or international operating environment." }
             ].map((cap, i) => (
               <motion.div 
                 key={cap.title}
@@ -394,7 +394,7 @@ export default function App() {
               </div>
               <div>
                 <span className="font-label text-xs tracking-widest uppercase text-white block">Director of Ops</span>
-                <span className="font-label text-[10px] tracking-widest uppercase text-outline">Sector 7 Command</span>
+                <span className="font-label text-[10px] tracking-widest uppercase text-outline">Office of the Director of Operations</span>
               </div>
             </div>
           </motion.div>
@@ -435,7 +435,7 @@ export default function App() {
                 />
                 <div className="absolute bottom-0 left-0 p-8 w-full bg-gradient-to-t from-black to-transparent">
                   <span className="font-label text-[10px] tracking-[0.3em] uppercase text-primary block mb-2">Theater A-9</span>
-                  <h4 className="font-headline text-2xl text-white tracking-tight uppercase">Tactical Verification Cluster</h4>
+                  <h4 className="font-headline text-2xl text-white tracking-tight uppercase">Operational Verification System</h4>
                 </div>
               </div>
               <div className="aspect-[4/5] bg-surface relative overflow-hidden group">
@@ -447,7 +447,7 @@ export default function App() {
                 />
                 <div className="absolute bottom-0 left-0 p-8 w-full bg-gradient-to-t from-black to-transparent">
                   <span className="font-label text-[10px] tracking-[0.3em] uppercase text-primary block mb-2">Global Urban</span>
-                  <h4 className="font-headline text-2xl text-white tracking-tight uppercase">Infrastructure Shield</h4>
+                  <h4 className="font-headline text-2xl text-white tracking-tight uppercase">Critical Infrastructure Monitoring</h4>
                 </div>
               </div>
             </div>
@@ -467,7 +467,7 @@ export default function App() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-16 md:gap-24 relative z-10">
             {[
               { icon: DraftingCompass, title: "Define", desc: "Establishing baseline truth metrics and defining operational parameters within the target theater.", bracket: "tl_br" },
-              { icon: Rocket, title: "Deploy", desc: "Global hardware and software injection. Establishing persistent presence and data link-up within hours.", bracket: "" },
+              { icon: Rocket, title: "Deploy", desc: "Rapid hardware deployment and system integration. Establishing persistent presence and data link-up within hours.", bracket: "" },
               { icon: CircleCheckBig, title: "Deliver", desc: "Continuous operational verification and high-fidelity intelligence output directly to decision makers.", bracket: "tr_bl" }
             ].map((step, i) => (
               <motion.div 
@@ -523,10 +523,10 @@ export default function App() {
             
             <div className="flex flex-wrap gap-6 md:gap-8">
               <button className="bg-primary text-on-primary px-8 md:px-10 py-4 md:py-5 font-label text-xs tracking-[0.3em] uppercase font-bold hover:bg-secondary transition-all">
-                Initialize Connection
+                Request Capability Brief
               </button>
               <button className="border border-outline-variant/30 text-white px-8 md:px-10 py-4 md:py-5 font-label text-xs tracking-[0.3em] uppercase font-bold hover:bg-white/5 transition-all">
-                View Public Archive
+                Engage for Deployment
               </button>
             </div>
             
