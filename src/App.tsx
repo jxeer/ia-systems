@@ -378,7 +378,7 @@ export default function App() {
                 "Real-time aerial reconnaissance for operations teams"
               ],
               outcome: "Accelerated recovery operations, reduced reporting risk, and audit-ready documentation for reimbursement and compliance.",
-              image: "/img/flood.jpg",
+              image: "/img/domain_disaster.png",
               imageAlt: "Aerial flood disaster view"
             },
             {
@@ -394,7 +394,7 @@ export default function App() {
                 "Urban planning and infrastructure mapping"
               ],
               outcome: "Improved asset visibility, data-driven decision-making, and reduced operational risk across critical infrastructure systems.",
-              image: "/img/flood3.jpg",
+              image: "/img/domain_infrastructure.png",
               imageAlt: "Infrastructure aerial monitoring"
             },
             {
@@ -410,7 +410,7 @@ export default function App() {
                 "Mission support and deployment logistics"
               ],
               outcome: "Enhanced operational readiness, trusted intelligence, and validated field data for defense and government decision makers.",
-              image: "/img/disaster.jpg",
+              image: "/img/domain_defense.png",
               imageAlt: "Defense operational support"
             }
           ].map((domain, i) => (
@@ -422,7 +422,7 @@ export default function App() {
               viewport={{ once: true }}
               className="grid grid-cols-1 lg:grid-cols-2 gap-0 border-t border-outline-variant/10 mb-px items-stretch"
             >
-              <div className="py-16 md:py-24 pr-8 md:pr-16 pl-8 border-l-[3px] border-primary h-full">
+              <div className={`py-16 md:py-24 pr-8 md:pr-16 pl-8 border-l-[3px] ${i === 0 ? 'border-white' : i === 1 ? 'border-white/60' : 'border-white/30'} h-full`}>
                 <span className="font-label text-[10px] tracking-[0.4em] uppercase text-outline mb-4 block">
                   {domain.number}
                 </span>
