@@ -694,6 +694,64 @@ export default function App() {
         </div>
       </section>
 
+      {/* Compliance & Procurement Section */}
+      <section className="py-24 md:py-32 px-6 md:px-12 bg-surface-lowest">
+        <div className="max-w-[1920px] mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start mb-16 md:mb-24">
+            <div>
+              <SectionLabel>Compliance & Procurement</SectionLabel>
+              <h2 className="font-headline text-4xl md:text-5xl tracking-tight text-white uppercase mb-6">
+                Ready for Government Engagement
+              </h2>
+              <p className="font-body text-on-surface-variant max-w-md">
+                IA Systems is fully registered and compliant for federal
+                procurement, prime contractor teaming, and direct
+                government engagement.
+              </p>
+            </div>
+            <div className="grid grid-cols-2 gap-px bg-outline-variant/10">
+              {[
+                { label: "UEI", value: "JSKCCS15147" },
+                { label: "CAGE Code", value: "7TMA7" },
+                { label: "Certification", value: "VOSB Certified" },
+                { label: "UAS Framework", value: "Blue UAS Aligned" },
+                { label: "Flight Authority", value: "FAA Authorized Operations" },
+                { label: "Primary NAICS", value: "541370 / 517110 / 336411" }
+              ].map((item) => (
+                <motion.div
+                  key={item.label}
+                  initial={{ opacity: 0, y: 10 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  className="bg-surface p-6 relative"
+                >
+                  <TechnicalBracket position="tl" />
+                  <span className="font-label text-[9px] tracking-[0.3em] uppercase text-outline block mb-2">
+                    {item.label}
+                  </span>
+                  <span className="font-headline text-sm text-white uppercase tracking-widest">
+                    {item.value}
+                  </span>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+          <div className="pt-12 border-t border-outline-variant/10 flex flex-col sm:flex-row items-start sm:items-center gap-6">
+            <a
+              href="/capability-statement.pdf"
+              download
+              className="bg-primary text-on-primary px-8 py-4 font-label text-[10px] tracking-[0.3em] uppercase font-bold hover:bg-secondary transition-all flex items-center gap-3"
+            >
+              Download Capability Statement
+              <ArrowRight className="w-4 h-4" />
+            </a>
+            <span className="font-label text-[9px] tracking-widest uppercase text-outline">
+              PDF · Current as of 2025
+            </span>
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section id="archive" className="py-32 md:py-48 px-6 md:px-12 relative overflow-hidden bg-surface-lowest">
         <div className="absolute top-0 right-0 w-1/2 h-full">
