@@ -464,6 +464,35 @@ export default function App() {
         </div>
       </section>
 
+      {/* Proof Metrics Strip */}
+      <section className="py-16 px-6 md:px-12 bg-surface-low border-t border-b border-outline-variant/10">
+        <div className="max-w-[1920px] mx-auto">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
+            {[
+              { value: "$3.7M+", label: "Executed Federal & Infrastructure Projects" },
+              { value: "3+", label: "Federal Agency Deployments" },
+              { value: "Nationwide", label: "Operational Environments" },
+              { value: "24hr", label: "Average Deployment Response Time" }
+            ].map((stat, i) => (
+              <motion.div
+                key={stat.label}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: i * 0.1 }}
+                viewport={{ once: true }}
+              >
+                <span className="font-headline text-4xl md:text-5xl text-white tracking-tighter block mb-2">
+                  {stat.value}
+                </span>
+                <span className="font-label text-[9px] tracking-[0.3em] uppercase text-outline">
+                  {stat.label}
+                </span>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Verified Truth Section */}
       <section className="relative min-h-[600px] md:min-h-[800px] flex items-center overflow-hidden">
         <div className="absolute inset-0 z-0">
