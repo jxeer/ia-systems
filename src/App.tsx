@@ -355,6 +355,115 @@ export default function App() {
         </div>
       </section>
 
+      {/* Operational Domains Section */}
+      <section className="py-24 md:py-32 px-6 md:px-12 bg-surface-lowest">
+        <div className="max-w-[1920px] mx-auto">
+          <SectionLabel>Operational Domains</SectionLabel>
+          <h2 className="font-headline text-4xl md:text-5xl tracking-tight text-white uppercase mb-16 md:mb-24">
+            Where We Operate
+          </h2>
+
+          {[
+            {
+              number: "01",
+              title: "Disaster Response & Recovery",
+              subtitle: "Rapid Deployment. Verified Outcomes.",
+              body: "IA Systems provides rapid aerial verification and documentation support for FEMA-aligned disaster response operations.",
+              capabilities: [
+                "Rapid aerial damage assessment",
+                "Debris field mapping and volumetric analysis",
+                "Route clearance and access identification",
+                "Temporary debris site monitoring",
+                "FEMA Public Assistance documentation support",
+                "Real-time aerial reconnaissance for operations teams"
+              ],
+              outcome: "Accelerated recovery operations, reduced reporting risk, and audit-ready documentation for reimbursement and compliance.",
+              image: "/img/flood.jpg",
+              imageAlt: "Aerial flood disaster view"
+            },
+            {
+              number: "02",
+              title: "Infrastructure & Environmental Intelligence",
+              subtitle: "Continuous Monitoring. Engineering-Grade Data.",
+              body: "IA Systems delivers high-fidelity geospatial intelligence for infrastructure inspection and environmental assessment.",
+              capabilities: [
+                "Infrastructure inspection and condition assessment",
+                "LiDAR terrain mapping and volumetric analysis",
+                "Environmental monitoring and impact assessment",
+                "Engineering survey support and site analysis",
+                "Urban planning and infrastructure mapping"
+              ],
+              outcome: "Improved asset visibility, data-driven decision-making, and reduced operational risk across critical infrastructure systems.",
+              image: "/img/flood3.jpg",
+              imageAlt: "Infrastructure aerial monitoring"
+            },
+            {
+              number: "03",
+              title: "Defense & Government Support",
+              subtitle: "Trusted Systems. Operational Readiness.",
+              body: "IA Systems supports federal and defense environments with verified aerial intelligence and field validation.",
+              capabilities: [
+                "Military installation infrastructure assessment",
+                "ISR and Counter-UAS (CUAS) integration",
+                "Operational verification and field validation",
+                "Security systems and sensor integration",
+                "Mission support and deployment logistics"
+              ],
+              outcome: "Enhanced operational readiness, trusted intelligence, and validated field data for defense and government decision makers.",
+              image: "/img/disaster.jpg",
+              imageAlt: "Defense operational support"
+            }
+          ].map((domain, i) => (
+            <motion.div
+              key={domain.number}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.1 }}
+              viewport={{ once: true }}
+              className="grid grid-cols-1 lg:grid-cols-2 gap-0 border-t border-outline-variant/10 mb-px items-stretch"
+            >
+              <div className="py-16 md:py-24 pr-8 md:pr-16 pl-8 border-l-[3px] border-primary h-full">
+                <span className="font-label text-[10px] tracking-[0.4em] uppercase text-outline mb-4 block">
+                  {domain.number}
+                </span>
+                <h3 className="font-headline text-3xl md:text-4xl uppercase tracking-tight text-white mb-4">
+                  {domain.title}
+                </h3>
+                <p className="font-headline text-lg text-white/70 mb-6">
+                  {domain.subtitle}
+                </p>
+                <p className="font-body text-on-surface-variant mb-8 max-w-md">
+                  {domain.body}
+                </p>
+                <div className="mb-8">
+                  <span className="font-label text-[9px] tracking-[0.3em] uppercase text-outline block mb-4">
+                    Core Capabilities
+                  </span>
+                  {domain.capabilities.map((item) => (
+                    <div key={item} className="flex items-start gap-3 mb-2">
+                      <span className="w-1.5 h-1.5 bg-primary mt-1.5 flex-shrink-0" />
+                      <span className="font-body text-sm text-on-surface-variant">{item}</span>
+                    </div>
+                  ))}
+                </div>
+                <p className="font-body text-sm text-on-surface-variant border-l border-primary pl-4">
+                  <strong className="text-white font-body">Outcome:</strong>{" "}
+                  {domain.outcome}
+                </p>
+              </div>
+              <div className="relative h-[400px] lg:h-auto overflow-hidden">
+                <img
+                  src={domain.image}
+                  alt={domain.imageAlt}
+                  className="w-full h-full object-cover opacity-80"
+                />
+                <div className="absolute inset-0 bg-gradient-to-r from-surface-lowest/60 to-transparent" />
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </section>
+
       {/* Verified Truth Section */}
       <section className="relative min-h-[600px] md:min-h-[800px] flex items-center overflow-hidden">
         <div className="absolute inset-0 z-0">
