@@ -201,7 +201,7 @@ export default function App() {
       </nav>
 
       {/* Hero Section with Carousel */}
-      <section className="relative grid grid-cols-1 lg:grid-cols-[45%_55%] lg:items-start pb-24 md:pb-32 overflow-hidden pt-[160px] min-h-screen" style={{ background: '#111' }}>
+      <section id="intelligence" className="relative grid grid-cols-1 lg:grid-cols-[45%_55%] lg:items-start pb-24 md:pb-32 overflow-hidden pt-[160px] min-h-screen" style={{ background: '#111' }}>
         {/* Carousel Background */}
         <div className="absolute inset-0 z-0">
           <div
@@ -310,7 +310,7 @@ export default function App() {
       </section>
 
       {/* Capabilities Section */}
-      <section id="intelligence" className="py-24 md:py-32 px-6 md:px-12 bg-surface-low">
+      <section id="systems" className="py-24 md:py-32 px-6 md:px-12 bg-surface-low">
         <div className="max-w-[1920px] mx-auto">
           <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 md:mb-24 gap-8">
             <div>
