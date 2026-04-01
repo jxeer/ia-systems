@@ -356,7 +356,7 @@ export default function App() {
       </section>
 
       {/* Operational Domains Section */}
-      <section className="py-24 md:py-32 px-6 md:px-12 bg-surface-lowest">
+      <section id="network" className="py-24 md:py-32 px-6 md:px-12 bg-surface-lowest">
         <div className="max-w-[1920px] mx-auto">
           <SectionLabel>Operational Domains</SectionLabel>
           <h2 className="font-headline text-4xl md:text-5xl tracking-tight text-white uppercase mb-16 md:mb-24">
@@ -547,7 +547,7 @@ export default function App() {
       </section>
 
       {/* Verified Truth Section */}
-      <section className="relative min-h-[600px] md:min-h-[800px] flex items-center overflow-hidden">
+      <section id="archive" className="relative min-h-[600px] md:min-h-[800px] flex items-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img 
             className="w-full h-full object-cover filter contrast-[1.5] brightness-50" 
@@ -647,7 +647,7 @@ export default function App() {
       </section>
 
       {/* Methodology Section */}
-      <section id="network" className="py-24 md:py-32 px-6 md:px-12 bg-surface">
+      <section className="py-24 md:py-32 px-6 md:px-12 bg-surface">
         <div className="max-w-[1920px] mx-auto text-center mb-16 md:mb-24">
           <SectionLabel className="justify-center">The Methodology</SectionLabel>
           <h2 className="font-headline text-4xl md:text-6xl tracking-tighter text-white uppercase">Define. Deploy. Deliver.</h2>
@@ -753,7 +753,7 @@ export default function App() {
       </section>
 
       {/* CTA Section */}
-      <section id="archive" className="py-32 md:py-48 px-6 md:px-12 relative overflow-hidden bg-surface-lowest">
+      <section className="py-32 md:py-48 px-6 md:px-12 relative overflow-hidden bg-surface-lowest">
         <div className="absolute top-0 right-0 w-1/2 h-full">
           <img 
             className="w-full h-full object-cover opacity-10 mix-blend-overlay" 

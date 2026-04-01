@@ -51,6 +51,17 @@
 - [x] **Compliance & Procurement** — UEI, CAGE Code, certifications, and capability statement download link
 - [x] Added "Download Capability Statement" link to CTA section
 
+### Section IDs & Navigation
+- [x] Added `id="intelligence"` to Hero section (carousel with "Operational Status: Active")
+- [x] Added `id="systems"` to System Capabilities section
+- [x] Added `id="network"` to Operational Domains section ("Where We Operate")
+- [x] Added `id="archive"` to Verified Truth section (mountain background)
+- [x] Removed stray `id="network"` and `id="archive"` from wrong sections (Methodology, CTA)
+
+### Operational Domains Updates
+- [x] Swapped domain images to dedicated assets: `domain_disaster.png`, `domain_infrastructure.png`, `domain_defense.png`
+- [x] Added border-left opacity differentiation per domain: Domain 01 (border-white), Domain 02 (border-white/60), Domain 03 (border-white/30)
+
 ---
 
 ## Next Actions
@@ -92,3 +103,4 @@
 - Site successfully deployed and working
 - New sections: Operational Domains, Proof Metrics, Who We Support, Compliance & Procurement
 - Footer CTA with "Request Capability Brief" and "Engage for Deployment" buttons
+- Nav anchor links correctly mapped: `#intelligence` → Hero, `#systems` → System Capabilities, `#network` → Operational Domains, `#archive` → Verified Truth
