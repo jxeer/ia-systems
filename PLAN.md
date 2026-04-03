@@ -61,6 +61,17 @@
 ### Operational Domains Updates
 - [x] Swapped domain images to dedicated assets: `domain_disaster.png`, `domain_infrastructure.png`, `domain_defense.png`
 - [x] Added border-left opacity differentiation per domain: Domain 01 (border-white), Domain 02 (border-white/60), Domain 03 (border-white/30)
+- [x] Added domain-specific "Download Capability Statement" link after Outcome paragraph for each domain
+
+### Capability Statement Downloads
+- [x] Replaced single "Download Capability Statement" button with three domain-specific buttons in Compliance section
+- [x] Labels: "Disaster Response", "Infrastructure & Environment", "Defense & Government"
+- [x] Updated label to "Capability Statements · Current as of 2025" above the buttons
+- [x] PDF files needed: `capability-statement-disaster.pdf`, `capability-statement-infrastructure.pdf`, `capability-statement-defense.pdf`
+
+### Navbar Behavior
+- [x] Added hide/show on scroll: navbar hides when scrolling down (>10px), reappears when scrolling up (>10px)
+- [x] Smooth 300ms transition animation
 
 ---
 
@@ -104,3 +115,5 @@
 - New sections: Operational Domains, Proof Metrics, Who We Support, Compliance & Procurement
 - Footer CTA with "Request Capability Brief" and "Engage for Deployment" buttons
 - Nav anchor links correctly mapped: `#intelligence` → Hero, `#systems` → System Capabilities, `#network` → Operational Domains, `#archive` → Verified Truth
+- Navbar hides on scroll down, reappears on scroll up (300ms transition)
+- Domain-specific "Download Capability Statement" links in Operational Domains and Compliance sections
