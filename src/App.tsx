@@ -466,6 +466,36 @@ export default function App() {
                   <strong className="text-white font-body">Outcome:</strong>{" "}
                   {domain.outcome}
                 </p>
+                {domain.number === "01" && (
+                  <a
+                    href="/capability-statement-disaster.pdf"
+                    download
+                    className="inline-flex items-center gap-2 font-label text-[9px] tracking-[0.3em] uppercase text-outline hover:text-white transition-colors mt-6"
+                  >
+                    <ArrowRight className="w-3 h-3" />
+                    Download Capability Statement
+                  </a>
+                )}
+                {domain.number === "02" && (
+                  <a
+                    href="/capability-statement-infrastructure.pdf"
+                    download
+                    className="inline-flex items-center gap-2 font-label text-[9px] tracking-[0.3em] uppercase text-outline hover:text-white transition-colors mt-6"
+                  >
+                    <ArrowRight className="w-3 h-3" />
+                    Download Capability Statement
+                  </a>
+                )}
+                {domain.number === "03" && (
+                  <a
+                    href="/capability-statement-defense.pdf"
+                    download
+                    className="inline-flex items-center gap-2 font-label text-[9px] tracking-[0.3em] uppercase text-outline hover:text-white transition-colors mt-6"
+                  >
+                    <ArrowRight className="w-3 h-3" />
+                    Download Capability Statement
+                  </a>
+                )}
               </div>
               <div className="relative h-[400px] lg:h-auto overflow-hidden">
                 <img
@@ -752,18 +782,36 @@ export default function App() {
               ))}
             </div>
           </div>
-          <div className="pt-12 border-t border-outline-variant/10 flex flex-col sm:flex-row items-start sm:items-center gap-6">
-            <a
-              href="/capability-statement.pdf"
-              download
-              className="bg-primary text-on-primary px-8 py-4 font-label text-[10px] tracking-[0.3em] uppercase font-bold hover:bg-secondary transition-all flex items-center gap-3"
-            >
-              Download Capability Statement
-              <ArrowRight className="w-4 h-4" />
-            </a>
-            <span className="font-label text-[9px] tracking-widest uppercase text-outline">
-              PDF · Current as of 2025
+          <div className="pt-12 border-t border-outline-variant/10">
+            <span className="font-label text-[9px] tracking-widest uppercase text-outline block mb-4">
+              Capability Statements · Current as of 2025
             </span>
+            <div className="flex flex-col sm:flex-row flex-wrap gap-4">
+              <a
+                href="/capability-statement-disaster.pdf"
+                download
+                className="bg-primary text-on-primary px-6 py-4 font-label text-[10px] tracking-[0.3em] uppercase font-bold hover:bg-secondary transition-all flex items-center gap-3"
+              >
+                Disaster Response
+                <ArrowRight className="w-4 h-4" />
+              </a>
+              <a
+                href="/capability-statement-infrastructure.pdf"
+                download
+                className="bg-primary text-on-primary px-6 py-4 font-label text-[10px] tracking-[0.3em] uppercase font-bold hover:bg-secondary transition-all flex items-center gap-3"
+              >
+                Infrastructure & Environment
+                <ArrowRight className="w-4 h-4" />
+              </a>
+              <a
+                href="/capability-statement-defense.pdf"
+                download
+                className="bg-primary text-on-primary px-6 py-4 font-label text-[10px] tracking-[0.3em] uppercase font-bold hover:bg-secondary transition-all flex items-center gap-3"
+              >
+                Defense & Government
+                <ArrowRight className="w-4 h-4" />
+              </a>
+            </div>
           </div>
         </div>
       </section>
