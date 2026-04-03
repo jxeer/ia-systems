@@ -92,7 +92,9 @@ export default function App() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [systemTime, setSystemTime] = useState(new Date().toISOString());
   const [logs, setLogs] = useState<string[]>(["SYSTEM INITIALIZED", "ENCRYPTION ACTIVE", "NODE US-EAST-1 CONNECTED"]);
+  const [isNavHidden, setIsNavHidden] = useState(false);
   const carouselRef = useRef<HTMLDivElement>(null);
+  const lastScrollY = useRef(0);
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -115,6 +117,20 @@ export default function App() {
   const prevSlide = () => setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
 
   useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      if (currentScrollY > lastScrollY.current + 10 && currentScrollY > 10) {
+        setIsNavHidden(true);
+      } else if (currentScrollY < lastScrollY.current - 10) {
+        setIsNavHidden(false);
+      }
+      lastScrollY.current = currentScrollY;
+    };
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  useEffect(() => {
     const interval = setInterval(() => {
       nextSlide();
     }, 8000);
@@ -126,7 +142,7 @@ export default function App() {
       <div className="scanline" />
       
       {/* Navigation */}
-      <nav className="fixed top-0 w-full z-50 glass-blur border-b border-outline-variant/10">
+      <nav className={`fixed top-0 w-full z-50 glass-blur border-b border-outline-variant/10 transition-transform duration-300 ${isNavHidden ? '-translate-y-full' : 'translate-y-0'}`}>
         <div className="flex justify-between items-center w-full px-6 md:px-12 py-4 md:py-6 max-w-[1920px] mx-auto">
           <div className="flex items-center gap-4">
             <div className="font-headline text-xl font-bold tracking-[0.2em] text-white">IA SYSTEMS</div>
